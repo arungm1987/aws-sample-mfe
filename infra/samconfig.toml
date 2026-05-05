@@ -1,0 +1,15 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "sample-mfe-repo-stack"
+resolve_s3 = true
+s3_prefix = "sample-mfe-repo-stack"
+region = "ap-south-1"
+profile = "arunadminaccess"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []
+
+[default.global.parameters]
+region = "ap-south-1"

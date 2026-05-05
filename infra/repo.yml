@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: CodeCommit Repository for Sample Microfrontend
+
+Resources:
+  SampleMFERepository:
+    Type: AWS::CodeCommit::Repository
+    Properties:
+      RepositoryName: sample-mfe
+      RepositoryDescription: "Enterprise template for new MFEs"
+      Tags:
+        - Key: Environment
+          Value: Production
+        - Key: Team
+          Value: Platform-UI
+
+Outputs:
+  RepoCloneUrl:
+    Description: "Copy this URL to push your code"
+    Value: !GetAtt SampleMFERepository.CloneUrlHttp
